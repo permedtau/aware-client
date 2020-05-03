@@ -107,7 +107,10 @@ public class Https {
             URL path = new URL(url);
 
             HttpsURLConnection path_connection = (HttpsURLConnection) path.openConnection();
-            path_connection.setSSLSocketFactory(sslSocketFactory);
+            //erez
+            if (sslSocketFactory!=null) {
+                path_connection.setSSLSocketFactory(sslSocketFactory);
+            }
             path_connection.setReadTimeout(timeout);
             path_connection.setConnectTimeout(timeout);
             path_connection.setRequestMethod("POST");
@@ -182,7 +185,10 @@ public class Https {
 
             URL path = new URL(url);
             HttpsURLConnection path_connection = (HttpsURLConnection) path.openConnection();
-            path_connection.setSSLSocketFactory(sslSocketFactory);
+            //erez
+            if (sslSocketFactory!=null) {
+                path_connection.setSSLSocketFactory(sslSocketFactory);
+            }
             path_connection.setReadTimeout(timeout);
             path_connection.setConnectTimeout(timeout);
             path_connection.setRequestMethod("GET");
